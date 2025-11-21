@@ -33,22 +33,17 @@ diversidad_orden <- datos_filtrados %>%
     n_especies = n_distinct(scientific_name_animals),
     n_interacciones = n(),
     .groups = "drop"
-  ) %>% 
-  arrange(desc(n_especies))
+  ) 
 
 #TOP especies por orden
 top_especies <- datos_filtrados %>% 
   group_by(order_animals, scientific_name_animals) %>% 
   summarise(n_interacciones = n(), .groups = "drop") %>% 
   group_by(order_animals) %>% 
-  slice_max(n_interacciones, n = 3) %>% 
-  arrange(order_animals, desc(n_interacciones))
+  slice_max(n_interacciones, n = 3)
 
 #Plantas más visitadas
 plantas_top <- datos_filtrados %>% 
   count(scientific_name_plants, family_plants, sort = TRUE) %>% 
   head(15)
 
-#Origen de plantas
-origen_plantas <- datos_filtrados %>% 
-  count(establishment_means_plants, sort = TRUE)

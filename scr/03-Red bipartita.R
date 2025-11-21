@@ -1,6 +1,6 @@
 
 # Tabla interacciones unicas ----------------------------------------------
-
+# Me ordena los datos y dropea los NA y me ordena toda la base de datos
 interacciones <- datos_filtrados %>% 
   filter(!is.na(scientific_name_plants) & !is.na(scientific_name_animals)) %>% 
   select(planta = scientific_name_plants,
@@ -56,3 +56,52 @@ contribucion_orden <- metricas_orden %>%
     prop_interacciones = total_interacciones / sum(total_interacciones) * 100
   )
 
+matriz_transpuesta <- t(matriz_red)
+
+#Red completa 
+plotweb(matriz_transpuesta, 
+        sorting = "normal",
+        higher_color = "darkgreen",       
+        lower_color = "darkorange",       
+        higher_border = "darkgreen",
+        lower_border = "darkorange",
+        link_color = "higher",            
+        link_alpha = 0.5,                 
+        text_size = 0.2,
+        spacing = 0.3,
+        box_size = 0.1)
+
+# Matriz por Orden --------------------------------------------------------
+matriz_orden <- function(orden_seleccionado) {
+  mat <- interacciones %>% 
+    filter(orden == orden_seleccionado) %>% 
+    select(planta, polinizador, frecuencia) %>% 
+    group_by(planta, polinizador) %>% 
+    summarise(frecuencia = sum(frecuencia), .groups = "drop") %>% 
+    pivot_wider(names_from = polinizador, 
+                values_from = frecuencia, 
+                values_fill = 0) %>% 
+    column_to_rownames("planta") %>% 
+    as.matrix()
+  
+  return(t(mat))  # Transponer para bipartite
+}
+
+
+# Hymenoptera
+mat_hym <- matriz_orden("Hymenoptera")
+plotweb(mat_hym, 
+        method="normal", text.rot = 90, 
+        labsize =1.5, ybig = 0.68, low.y = 0.8, high.y = 0.98, 
+        plot.axes = FALSE, y.width.low = 0.05, y.width.high = 0.05, 
+        col.high = "black", bor.col.interaction="black",
+        bor.col.high="black", low.spacing=0.03, high.spacing=0.08,
+        col.low =  c("#E94B00","#E94B00","#E94B00","#E94B00","#E94B00",
+                     "#E94B00","#E94B00","#E94B00","#32AE7C","#32AE7C",
+                     "#32AE7C","#32AE7C","#32AE7C","#32AE7C","#32AE7C",
+                     "violet","violet"))
+
+mat_lep <- crear_matriz_orden("Lepidoptera")
+plotweb(mat_lep)
+
+par(mfrow = c(1, 1))
