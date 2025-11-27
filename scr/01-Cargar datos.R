@@ -4,9 +4,8 @@
 
 library(tidyverse) #Visualizacion de datos
 library(janitor)  #Lipimar nombres de columnas
-library(bipartite) 
-library(ggbipart)# Análisis de redes bipartitas
 library(ggplot2)
+library(patchwork)
 
 # Datos obetenidos de: https://github.com/fonturbel-lab/pollination_catalogue
 

@@ -1,49 +1,46 @@
 
 # Filtrar datos -----------------------------------------------------------
-#Filtrar Regiones y Ordenes de polinizadores
-datos_filtrados <- datos %>% 
-  filter(state_province %in% c("Los Lagos", "Los Rios"))
+#Filtrar Ordenes de polinizadores
+datos_filtrados <- filter(datos, 
+                          order_animals %in% c("Hymenoptera", "Diptera", "Lepidoptera", 
+                                               "Coleoptera", "Apodiformes", "Passeriformes"),
+                          !is.na(state_province))  
 
-datos_filtrados <- datos_filtrados %>% 
-  filter(order_animals %in% c("Hymenoptera", "Coleoptera", "Diptera", "Lepidoptera"))
-
-#Verificar filtros
-datos_filtrados%>% 
-  count(state_province, sort = TRUE) 
-
-datos_filtrados %>% 
-  count(order_animals, sort = TRUE)
+#Verificamos que los datos esten correctos 
+count(datos_filtrados, order_animals, sort = TRUE)
+count(datos_filtrados, state_province, sort = TRUE)
 
 
 # Explorar datos ----------------------------------------------------------
-#Resumen general de mis datos
-resumen_general <- datos_filtrados %>% 
-  summarise(
-    n_interacciones = n(),
-    n_plantas = n_distinct(scientific_name_plants),
-    n_polinizadores = n_distinct(scientific_name_animals),
-    n_familias_plantas = n_distinct(family_plants),
-    n_familias_animales = n_distinct(family_animals)
-  )
+#Abundancia de interacciones por orden 
 
-#Diversidad por orden
-diversidad_orden <- datos_filtrados %>% 
-  group_by(order_animals) %>% 
-  summarise(
-    n_especies = n_distinct(scientific_name_animals),
-    n_interacciones = n(),
-    .groups = "drop"
-  ) 
+abundancia_interacciones <- datos_filtrados %>%
+  group_by(order_animals) %>%
+  summarise(n_interacciones = n())
 
-#TOP especies por orden
-top_especies <- datos_filtrados %>% 
-  group_by(order_animals, scientific_name_animals) %>% 
-  summarise(n_interacciones = n(), .groups = "drop") %>% 
-  group_by(order_animals) %>% 
-  slice_max(n_interacciones, n = 3)
+#Riqueza de especies por orden
 
-#Plantas más visitadas
-plantas_top <- datos_filtrados %>% 
-  count(scientific_name_plants, family_plants, sort = TRUE) %>% 
-  head(15)
+riqueza <- datos_filtrados %>%
+  group_by(order_animals) %>%
+  summarise(n_distinct(scientific_name_animals))
+
+#Abundancia de ordenes por region
+
+abundancia_regiones <- datos_filtrados %>%
+  group_by(state_province) %>%
+  summarise(n_interacciones = n())
+
+#Especies de plantas e insectos con mas interacciones
+
+Top_plantas <- datos_filtrados %>%
+  filter(!is.na(scientific_name_plants)) %>%
+  group_by(scientific_name_plants) %>%
+  summarise(n_interacciones = n()) %>%
+  arrange(desc(n_interacciones))
+
+Top_insectos <- datos_filtrados %>%
+  filter(!is.na(scientific_name_animals)) %>%
+  group_by(scientific_name_animals) %>%
+  summarise(n_interacciones = n()) %>%
+  arrange(desc(n_interacciones))
 
