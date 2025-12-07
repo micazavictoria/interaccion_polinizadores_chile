@@ -18,7 +18,7 @@ ggplot(abundancia_interacciones, aes(x = order_animals, y = n_interacciones, fil
   theme_minimal() +
   theme(
     legend.position = "none",
-    plot.title = element_text(hjust = 0.5, size = 13, face = "bold")
+    plot.title = element_text(hjust = 0.5, face = "bold")
   )
 
 # Riqueza de especies -----------------------------------------------------
@@ -40,15 +40,15 @@ ggplot(riqueza, aes(x = order_animals, y = n_especies, fill = order_animals)) +
   theme_minimal() +
   theme(
     legend.position = "none",
-    plot.title = element_text(hjust = 0.5, size = 13, face = "bold")
+    plot.title = element_text(hjust = 0.5, face = "bold")
   )
 
 
 # Heatmap -----------------------------------------------------------------
 
 HEATMAP <- ggplot(abundancia_regiones, aes(x = order_animals, y = state_province, fill = n_interacciones)) +
-  geom_tile(color = "white", size = 0.5) +
-  scale_fill_gradient(low = "#D5C5D9", high = "purple") +
+  geom_tile(color = "black", size = 0.5) +
+  scale_fill_gradient(low = "white", high = "purple") +
   labs(
     title = "Abundancia de órdenes por región en Chile",
     x = "Orden",
@@ -58,5 +58,6 @@ HEATMAP <- ggplot(abundancia_regiones, aes(x = order_animals, y = state_province
   theme_minimal() +
   theme(
     plot.title = element_text(hjust = 0.5, size = 13, face = "bold"),
-    axis.text.x = element_text(angle = 90, hjust = 1)
+    axis.text.x = element_text(angle = 90, hjust = 1),
+    plot.background = element_rect(fill = "white", color = NA)
   )
