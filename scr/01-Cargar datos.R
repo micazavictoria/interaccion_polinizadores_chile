@@ -1,9 +1,8 @@
 
 # Librerías ---------------------------------------------------------------
-#Aca poner todas las liberiras que vaya usando
 
-library(tidyverse) #Visualizacion de datos
-library(janitor)  #Lipimar nombres de columnas
+library(tidyverse) 
+library(janitor)  
 library(ggplot2)
 library(patchwork)
 

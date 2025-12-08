@@ -47,8 +47,8 @@ ggplot(riqueza, aes(x = order_animals, y = n_especies, fill = order_animals)) +
 # Heatmap -----------------------------------------------------------------
 
 HEATMAP <- ggplot(abundancia_regiones, aes(x = order_animals, y = state_province, fill = n_interacciones)) +
-  geom_tile(color = "black", size = 0.5) +
-  scale_fill_gradient(low = "white", high = "purple") +
+  geom_tile(color = "gray", linewidth = 0.5) +
+  scale_fill_gradient(low = "white", high = "#F2C572", na.value = "white") +
   labs(
     title = "Abundancia de órdenes por región en Chile",
     x = "Orden",
@@ -57,7 +57,17 @@ HEATMAP <- ggplot(abundancia_regiones, aes(x = order_animals, y = state_province
   ) +
   theme_minimal() +
   theme(
-    plot.title = element_text(hjust = 0.5, size = 13, face = "bold"),
+    plot.title = element_text(hjust = 0.5, face = "bold"),
     axis.text.x = element_text(angle = 90, hjust = 1),
-    plot.background = element_rect(fill = "white", color = NA)
+    panel.background = element_rect(fill = "gray95", color = NA)
   )
+
+# Top plantas -------------------------------------------------------------
+#Especies de plantas con mayor interaccion
+
+
+# Top insectos ------------------------------------------------------------
+#Esoecies de insectos con mayor interaccón
+
+
+
