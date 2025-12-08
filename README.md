@@ -6,17 +6,13 @@ Este proyecto analiza el Pollination catalogue de interacciones planta–poliniz
 
 ![](img/bombus.jpg) *Bombus dahlbomii* visitando una *Fuchsia magellanica*. Fuente: Elaboración propia.
 
-------------------------------------------------------------------------
-
 ## 🌎 Contexto
 
-Las interacciones entre insectos polinizadores y plantas son un componente clave del funcionamiento de los ecosistemas terrestres, y en Chile se han estudiado principalmente a través de registros de observaciones de campo compilados en distintos proyectos. Entre los grupos de insectos que participan en la polinización, destacan cuatro órdenes por su frecuencia y relevancia ecológica: Hymenoptera, Diptera, Coleoptera y Lepidoptera, los cuales concentran la mayor parte de las interacciones descritas en el país (Arroyo et al., 1982; Smith-Ramírez et al., 2005).
+Las interacciones entre animales polinizadores y plantas son un componente clave del funcionamiento de los ecosistemas terrestres, y en Chile se han documentado a través de numerosos estudios y registros de campo. Si bien los insectos —particularmente los órdenes Hymenoptera, Diptera, Coleoptera y Lepidoptera— representan la mayor parte de los polinizadores descritos en el país (Arroyo et al., 1982; Smith-Ramírez et al., 2005), otros grupos como los Apodiformes (colibríes) y Passeriformes también participan en interacciones de polinización, especialmente en ciertos tipos de plantas y ambientes.
 
-Hymenoptera , especialmente abejas nativas e introducidas, suele ser el grupo dominante en estudios de polinización debido a su alta eficiencia, comportamiento de búsqueda y fidelidad floral (Michener, 2007). Sin embargo, otros órdenes como Diptera (moscas), Lepidoptera (mariposas) y Coleoptera (escarabajos) también cumplen roles importantes en determinados ambientes y plantas, contribuyendo a redes de interacción más diversas de lo que comúnmente se asume.
+Hymenoptera, especialmente abejas nativas e introducidas, suele ser el grupo dominante debido a su alta eficiencia y fidelidad floral (Michener, 2007). Sin embargo, Diptera, Lepidoptera, Coleoptera y algunos grupos de aves contribuyen de forma importante a la diversidad funcional de las redes de polinización, reflejando la complejidad ecológica de estos sistemas.
 
-El Pollination Catalogue reúne miles de registros publicados de interacciones insecto–planta entre 1982 y 2019, ofreciendo una oportunidad para explorar patrones de dominancia, riqueza y abundancia entre órdenes a escala nacional. Este proyecto utiliza dicho catálogo para visualizar cómo se distribuyen estas interacciones y evaluar qué orden de polinizadores registra la mayor actividad en Chile.
-
-------------------------------------------------------------------------
+El *Pollination catalogue* reúne miles de registros publicados de interacciones entre animales polinizadores y plantas entre 1982 y 2019, permitiendo explorar patrones de dominancia, riqueza y distribución a escala nacional. En este proyecto se utilizan estos datos para visualizar cómo se distribuyen las interacciones y evaluar qué órdenes presentan mayor actividad en Chile.
 
 ## 📁 Datos
 
@@ -33,13 +29,9 @@ El dataset incluye información sobre:
 
 *Órdenes analizados:* Hymenoptera, Diptera, Lepidoptera, Coleoptera, Apodiformes, Passeriformes
 
-------------------------------------------------------------------------
-
 ## 🎯 Objetivos
 
 Describir y visualizar la dominancia de los principales órdenes de polinizadores en las interacciones planta–polinizador registradas en Chile.
-
-------------------------------------------------------------------------
 
 ## 📂 Estructura del Repositorio
 
@@ -64,8 +56,6 @@ interaccion_polinizadores_chile/
 ├── interaction_polinizadores_chile.Rproj  
 └── README.md                     
 ```
-
-------------------------------------------------------------------------
 
 ## 📦 Procesamiento de datos
 
@@ -92,8 +82,6 @@ Para el análisis de los datos, se filtró el *Pollination catalogue* para conse
 
 Finalmente, se generaron visualizaciones mediante gráficos de barras, heatmaps y mapas de abundancia a nivel nacional.
 
-------------------------------------------------------------------------
-
 ## 📊 Resultados
 
 A continuacion se presentan los resultados obtenidos del análisis.
@@ -110,35 +98,35 @@ A continuacion se presentan los resultados obtenidos del análisis.
 
 ![](plots/heatmap.png)El heatmap muestra cómo se distribuyen las interacciones de los diferentes órdenes de polinizadores entre las regiones de Chile. Hymenoptera destaca como el orden con mayor presencia y abundancia en varias regiones, especialmente en la Región Metropolitana y Los Lagos, mientras que Diptera presenta valores moderados y una distribución más amplia. Los demás órdenes exhiben abundancias bajas y presencia más limitada.
 
-### Figura 4: *Especies de insectos y plantas con mayor interacciones*
+### Figura 4: *Mapa abundacia total de interacciones por región*
 
-![](plots/heatmap.png)
+![](plots/mapa.png)El mapa muestra la distribución espacial del total de interacciones registradas en Chile. Las regiones Metropolitana, Valparaíso y Los Lagos concentran la mayor cantidad de interacciones, lo que sugiere tanto una mayor actividad de polinizadores como una mayor intensidad de muestreo en estas zonas. En contraste, varias regiones del norte y extremo sur presentan valores bajos o sin registros, evidenciando vacíos de información o menor actividad documentada.
 
-### Figura 5: *Mapa abundancia por región*
+## Analisis Complenentario: Especies mas interactivas
 
-![](plots/heatmap.png)
+### Figura 5: *Especies de animales con mayor número de interacciones*
 
-------------------------------------------------------------------------
+![](plots/animal.png)El gráfico muestra las especies animales con mayor cantidad de interacciones registradas, destacando a *Bombus dahlbomii, Sephanoides sephaniodes* (colibrí) y *Apis mellifera*. Estos resultados reflejan la contribución tanto de insectos como de aves dentro de las redes de polinización registradas en Chile.
+
+### Figura 6: *Especies de plantas con mayor número de interacciones*
+
+![](plots/plant.png)La planta con más interacciones observadas es *Alstroemeria ligtu*, seguida por *Eucryphia cordifolia* y otras especies de amplia distribución. Estas plantas funcionan como nodos altamente conectados dentro de las redes de polinización, recibiendo visitas de múltiples grupos de polinizadores.
 
 ## 📝 Conclusiones
 
 Aqui van las conclu
 
-------------------------------------------------------------------------
-
 ## 🎓 Audiencia
 
-------------------------------------------------------------------------
+Aca va la audiencia
 
 ## 💻 Declaración de uso de inteligencia artificial generativa
 
 La autora recurrió a las herramientas ChatGPT y Claude como apoyo en la corrección y optimización de algunos scripts utilizados durante el procesamiento y visualización de los datos.
 
-------------------------------------------------------------------------
-
 ## 🌷 Autor
 
-------------------------------------------------------------------------
+Descripcion del autor
 
 ## 📖 Referencias
 

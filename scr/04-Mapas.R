@@ -20,7 +20,7 @@ ABUN_TOTAL <- ggplot(mapa_abundancia) +
   scale_fill_gradient(low = "white", high = "purple", na.value = "gray90") +
   coord_sf(xlim = c(-76, -66), ylim = c(-56, -17)) +
   labs(
-    title = "Abundancia total por región",
+    title = "Abundancia total de interacciones por región",
     fill = "N° interacciones"
   ) +
   theme_minimal() +

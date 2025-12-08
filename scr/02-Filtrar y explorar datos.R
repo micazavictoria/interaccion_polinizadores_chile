@@ -51,7 +51,7 @@ abundancia_regiones <- datos_filtrados %>%
   group_by(state_province, order_animals) %>%
   summarise(n_interacciones = n(), .groups = "drop")
 
-#Especies de plantas e insectos con mas interacciones
+#Especies de plantas y animales con mas interacciones en CHile 
 
 Top_plantas <- datos_filtrados %>%
   filter(!is.na(scientific_name_plants)) %>%
@@ -59,7 +59,7 @@ Top_plantas <- datos_filtrados %>%
   summarise(n_interacciones = n()) %>%
   arrange(desc(n_interacciones))
 
-Top_insectos <- datos_filtrados %>%
+Top_aniamles <- datos_filtrados %>%
   filter(!is.na(scientific_name_animals)) %>%
   group_by(scientific_name_animals) %>%
   summarise(n_interacciones = n()) %>%
