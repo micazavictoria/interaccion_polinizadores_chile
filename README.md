@@ -114,11 +114,15 @@ A continuacion se presentan los resultados obtenidos del análisis.
 
 ## 📝 Conclusiones
 
-Aqui van las conclu
+El análisis del Pollination Catalogue muestra una clara dominancia del orden Hymenoptera en las interacciones planta–animal registradas en Chile, tanto en términos de abundancia como de riqueza de especies. Diptera ocupa el segundo lugar en ambos indicadores, aportando de forma importante a la diversidad funcional de las redes de polinización. La distribución espacial confirma este patrón, con Hymenoptera registrando mayor actividad en diversas regiones, especialmente en la Metropolitana y Los Lagos.
+
+Si bien otros órdenes, incluidos grupos de aves como Apodiformes y Passeriformes, participan en la polinización, su contribución es considerablemente menor. Estos resultados reflejan tanto la ecología real de los polinizadores en Chile como posibles sesgos de muestreo presentes en los datos.
+
+En conjunto, los patrones visualizados permiten identificar qué grupos desempeñan un rol central en la polinización del país y destacan la importancia de generar más información en regiones submuestreadas y sobre grupos menos estudiados.
 
 ## 🎓 Audiencia
 
-Aca va la audiencia
+Este proyecto está dirigido a estudiantes, investigadores interesados en la ecología de interacciones planta–polinizador, así como en el análisis y visualización de datos ecológicos. Las visualizaciones y resultados presentados pueden servir como referencia para estudios de biodiversidad, redes de interacción y exploraciones preliminares del Pollination Catalogue en Chile.
 
 ## 💻 Declaración de uso de inteligencia artificial generativa
 
@@ -126,7 +130,7 @@ La autora recurrió a las herramientas ChatGPT y Claude como apoyo en la correcc
 
 ## 🌷 Autor
 
-Descripcion del autor
+Proyecto desarrollado por Victoria Miranda-Icaza, Bióloga con mención en Recursos Naturales y estudiante de la Pontificia Universidad Católica de Chile, como parte del curso Visualización de Datos Medioambientales.
 
 ## 📖 Referencias
 
