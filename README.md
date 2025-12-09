@@ -1,4 +1,4 @@
-# Dominancia de órdenes de polinizadores en interacciones insecto-planta en Chile
+# Dominancia de órdenes de polinizadores en interacciones planta-polinizador en Chile
 
 ## 🦋🐝🪲
 
